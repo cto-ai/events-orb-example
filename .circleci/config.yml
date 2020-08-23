@@ -2,7 +2,7 @@ version: 2.1
 description: "Example showing how to send a workflow metric events to CTO.ai. Set CTOAI_EVENTS_API_TOKEN and CTOAI_EVENTS_API_TEAM_ID env vars in CircleCI settings."
 
 orbs:
-  ctoai: cto-ai/cto-ai@dev:f
+  cto-ai: cto-ai/cto-ai@dev:f
 
 jobs:
    events_example_job:
