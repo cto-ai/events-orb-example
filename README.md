@@ -1,8 +1,34 @@
-# events-orb-example
-An example showing how to use the CTO.ai CircleCI Orb to use the Events API. This enables Workflow Metrics.
+# CircleCI Orb for CTO.ai Workflow Metrics
 
-User must set a secret environment variable for their Events API Token in the CircleCI settings. This could be in a CircleCI Context, in their Organization Settings, or their Project Settings. The secret must then be accessed from the user's CircleCI config (e.g. `${CTOAI_EVENTS_API_TOKEN}` and passed to the Orb in order to access the Events API.
+If your CICD runs on CircleCI, you can use the CTO.ai CircleCI Orb to make it easier to instrument your CICD with [workflow events](https://cto.ai/docs/workflow-metrics). The Orb can be accessed with this stanza in your CircleCI configuration yaml:
 
-The `team_id` must also be passed to the Orb, and the user could put this in an environment variable too, though it is not strictly necessary, as `team_id` is not a secret. The user could put their `team_id` directly in their config if they wish.
+```
+orbs:
+  cto-ai: cto-ai/cto-ai@0.1.0
+```
 
-More information is available at the CTO.ai documentation for the Events API: https://cto.ai/docs/workflow-metrics-api
+Use the Orb to send events to CTO.ai by calling it from your `steps`:
+
+```
+      steps:
+        - cto-ai/event:
+            token: ${CTOAI_EVENTS_API_TOKEN}
+            team_id: ${CTOAI_EVENTS_API_TEAM_ID}
+            stage: Deployment
+            status: Succeeded
+            change_id: ticket-id-123
+            pipeline_id: pipeline-label-A1
+            stage_ref: branch-label-543
+            custom: "{}"
+```
+
+
+`${CTOAI_EVENTS_API_TOKEN}` is a secret environment variable provided by CTO.ai that you set in your CircleCI config, and then pass to the Orb. If you don't have a token, instructions on how to get one are available here: https://cto.ai/docs/workflow-metrics-api. 
+
+You can set your environmenta variables in a CircleCI Context, in your Organization Settings, or on your Project Settings. The environment variable must then be accessed from the user's CircleCI config (e.g. `${CTOAI_EVENTS_API_TOKEN}` as seen above) and passed to the Orb to use the CTO.ai Events API.
+
+The `team_id` is also a required field, and could also be accessed using an environment variable as shown in the example above. Since the `team_id` is not a secret, however, this is not strictly necessary. It could be supplied directly in your config file. 
+
+More information on CTO.ai Workflow Metrics: https://cto.ai/docs/workflow-metrics
+
+More information on the CTO.ai Events API: https://cto.ai/docs/workflow-metrics-api
