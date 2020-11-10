@@ -34,4 +34,4 @@ More information on CTO.ai Workflow Metrics: https://cto.ai/docs/workflow-metric
 
 More information on the CTO.ai Events API: https://cto.ai/docs/workflow-metrics-api
 
-CTO.ai CTO.ai
+CTO.ai
