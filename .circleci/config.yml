@@ -3,7 +3,7 @@ description: "Example showing how to send a workflow metric events to CTO.ai. Se
 
 orbs:
   cto-ai0: cto-ai/cto-ai@0.1.0
-  cto-ai1: cto-ai/cto-ai@1.0.0
+  cto-ai1: cto-ai/cto-ai@1.0.1
 
 jobs:
    events_example_job0:
@@ -32,7 +32,7 @@ jobs:
             image: app78df3a3c
             environment: production
             event_name: deployment
-            event_action: successful
+            event_action: succeeded
             user: username
             origin: circleci-orb
 
