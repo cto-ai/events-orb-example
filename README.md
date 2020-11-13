@@ -14,13 +14,12 @@ Use the Orb to send events to CTO.ai by calling it from your `steps`:
         - cto-ai/event:
             token: ${CTOAI_EVENTS_API_TOKEN}
             team_id: ${CTOAI_EVENTS_API_TEAM_ID}
-            event_name: deployment
-            event_action: succeeded
-            branch: ticket-id-123
-            commit: pipeline-label-A1
-            image: branch-label-543
-            name: user
-            origin: shell
+            stage: Deployment
+            status: Succeeded
+            change_id: ticket-id-123
+            pipeline_id: pipeline-label-A1
+            stage_ref: branch-label-543
+            custom: "{}"
 ```
 
 Note: only `token` and `team_id` are required fields. The other fields are optional.
