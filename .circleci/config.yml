@@ -12,8 +12,8 @@ jobs:
         - cto-ai/event:
             token: ${CTOAI_EVENTS_API_TOKEN}
             team_id: ${CTOAI_EVENTS_API_TEAM_ID}
-            image: app78df3a3c
-            environment: production
+            image: app78df3bl2
+            environment: staging
             event_name: deployment
             event_action: succeeded
             origin: circleci-orb
