@@ -17,6 +17,7 @@ jobs:
             event_name: deployment
             event_action: succeeded
             origin: circleci-orb
+            vcs_type: github
 
 workflows:
    events_example_workflow:
