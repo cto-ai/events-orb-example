@@ -4,7 +4,7 @@ If your CICD runs on CircleCI, you can use the CTO.ai CircleCI Orb to make it ea
 
 ```
 orbs:
-  cto-ai: cto-ai/cto-ai@1.0.1
+  cto-ai: cto-ai/cto-ai@1.0.3
 ```
 
 Use the Orb to send events to CTO.ai by calling it from your `steps`:
@@ -20,7 +20,6 @@ Use the Orb to send events to CTO.ai by calling it from your `steps`:
             commit: pipeline-label-A1
             image: branch-label-543
             name: user
-            origin: shell
 ```
 
 Note: only `token` and `team_id` are required fields. The other fields are optional.
