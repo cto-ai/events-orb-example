@@ -16,7 +16,7 @@ Use the Orb to send events to CTO.ai by calling it from your `steps`:
             team_id: ${CTOAI_EVENTS_API_TEAM_ID}
             event_name: deployment
             event_action: succeeded
-            branch: ticket-id-123
+            branch: ticket-id-1234
             commit: pipeline-label-A1
             image: branch-label-543
             name: user
