@@ -11,7 +11,7 @@ jobs:
       steps:
         - cto-ai/event:
             token: ${CTOAI_EVENTS_API_TOKEN}
-            team_id: ${CTOAI_EVENTS_API_TEAM_ID}
+            team_id: ${CTOAI_TEAM_ID}
             image: app78df3bl2
             environment: staging
             event_name: deployment
