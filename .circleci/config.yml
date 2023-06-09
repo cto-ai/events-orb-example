@@ -15,7 +15,7 @@ jobs:
             image: app78df3bl2
             environment: staging
             event_name: deployment
-            event_action: succeeded
+            event_action: success
 
 workflows:
    events_example_workflow:
